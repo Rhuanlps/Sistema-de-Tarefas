@@ -1,6 +1,6 @@
-package com.project.action;
+package com.project.todo.action;
 
-import com.project.model.Task;
+import com.project.todo.model.Task;
 import org.springframework.stereotype.Component;
 
 @Component

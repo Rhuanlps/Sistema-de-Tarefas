@@ -9,11 +9,11 @@ export function TaskProvider({ children }) {
   const [message, setMessage] = useState("");
 
   // ==========================
-  // Load tasks from backend
+  // Load tasks
   // ==========================
   async function loadTasks() {
     setLoading(true);
-    const res = await api.get("/");
+    const res = await api.get("");   // <-- CORRIGIDO
     setTasks(res.data);
     setLoading(false);
   }
@@ -22,7 +22,7 @@ export function TaskProvider({ children }) {
   // Create
   // ==========================
   async function createTask(task) {
-    await api.post("/", task);
+    await api.post("", task);        
     await loadTasks();
     setMessage("Tarefa criada com sucesso!");
   }
@@ -31,7 +31,7 @@ export function TaskProvider({ children }) {
   // Update
   // ==========================
   async function updateTask(id, task) {
-    await api.put(`/${id}`, task);
+    await api.put(`/${id}`, task);   
     await loadTasks();
     setMessage("Tarefa atualizada!");
   }
@@ -40,27 +40,17 @@ export function TaskProvider({ children }) {
   // Delete
   // ==========================
   async function deleteTask(id) {
-    await api.delete(`/${id}`);
+    await api.delete(`/${id}`);      
     await loadTasks();
     setMessage("Tarefa deletada!");
   }
 
-  // Load tasks on start
   useEffect(() => {
     loadTasks();
   }, []);
 
   return (
-    <TaskContext.Provider
-      value={{
-        tasks,
-        loading,
-        message,
-        createTask,
-        updateTask,
-        deleteTask,
-      }}
-    >
+    <TaskContext.Provider value={{ tasks, loading, message, createTask, updateTask, deleteTask }}>
       {children}
     </TaskContext.Provider>
   );

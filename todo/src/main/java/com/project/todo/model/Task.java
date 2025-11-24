@@ -1,4 +1,4 @@
-package com.project.model;
+package com.project.todo.model;
 
 import com.project.todo.model.base.BaseEntity;
 import jakarta.persistence.*;
