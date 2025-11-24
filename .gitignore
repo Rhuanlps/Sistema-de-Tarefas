@@ -1,0 +1,12 @@
+.vscode/launch.json
+.idea/vcs.xml
+.idea/Sistema-de-Tarefas.iml
+.idea/modules.xml
+.idea/misc.xml
+.idea/jarRepositories.xml
+.idea/encodings.xml
+.idea/compiler.xml
+# Default ignored files
+/shelf/
+/workspace.xml
+.idea/workspace.xml
