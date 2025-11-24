@@ -1,10 +1,11 @@
-package com.project.todo.service;
+package com.project.service;
 
-import com.project.todo.action.ITaskAction;
+import com.project.action.ITaskAction;
+import com.project.model.Task;
+import com.project.repository.TaskRepository;
 import com.project.todo.exception.ResourceNotFoundException;
-import com.project.todo.model.Task;
-import com.project.todo.repository.TaskRepository;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 

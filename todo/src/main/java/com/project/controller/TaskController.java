@@ -1,7 +1,7 @@
-package com.project.todo.controller;
+package com.project.controller;
 
-import com.project.todo.model.Task;
-import com.project.todo.service.TaskService;
+import com.project.model.Task;
+import com.project.service.TaskService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

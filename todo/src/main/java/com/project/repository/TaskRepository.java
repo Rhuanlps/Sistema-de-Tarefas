@@ -1,8 +1,9 @@
-package com.project.todo.repository;
+package com.project.repository;
 
-import com.project.todo.model.Task;
-import com.project.todo.model.Task.Priority;
-import com.project.todo.model.Task.Status;
+
+import ch.qos.logback.core.status.Status;
+import com.project.model.Task;
+import jakarta.annotation.Priority;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
