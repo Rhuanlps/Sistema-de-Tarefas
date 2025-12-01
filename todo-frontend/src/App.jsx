@@ -13,6 +13,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/tasks" element={<TaskList />} />
           <Route path="/tasks/new" element={<TaskForm />} />
+          <Route path="/tasks/:id/edit" element={<TaskForm />} />
         </Routes>
       </BrowserRouter>
     </TaskProvider>

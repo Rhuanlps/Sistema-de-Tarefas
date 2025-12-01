@@ -1,114 +1,170 @@
-
-body {
+/* ============================
+   RESET E BASE
+============================ */
+* {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: #18181b;
-  color: #f1f1f1;
-
-  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
-/* Container Principal */
-#root {
+body {
+  background: #f0f2f5;
+  color: #2d2d2d;
+  padding-bottom: 40px;
+}
+
+/* ============================
+   CONTAINERS
+============================ */
+.page-container {
   width: 100%;
   max-width: 650px;
-  padding: 3rem 2.5rem;
+  margin: 40px auto;
+  background: white;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.section-title {
   text-align: center;
-
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 18px;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
-
-  animation: fadeIn 0.6s ease forwards;
-}
-
-/* ============================
-   Título
-============================ */
-h1 {
-  font-size: 2.6rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 25px;
+  color: #333;
 }
 
 /* ============================
-   Descrição / Texto
+   INPUTS
 ============================ */
-p {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  opacity: 0.85;
-  margin-top: 0;
-  margin-bottom: 2.5rem; /* separação do botão */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.input-label {
+  font-size: 0.92rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.input-field {
+  padding: 12px 14px;
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.input-field:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.25);
+  outline: none;
 }
 
 /* ============================
-   Botão
+   BOTÕES
 ============================ */
-button {
-  padding: 0.9em 1.7em;
-  font-size: 1.05rem;
-  font-weight: 600;
-
-  color: #f1f1f1;
-  background: #2b2b30;
-  border: 1px solid transparent;
-
-  border-radius: 18px;
+.btn {
+  padding: 12px 16px;
+  background: linear-gradient(to right, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: 0.25s ease;
-
-  box-shadow: 0 3px 15px rgba(0,0,0,0.25);
-
-  display: inline-block;
-  margin-top: 1rem; /* caso queira mais espaço */
+  transition: 0.2s ease;
+  box-shadow: 0px 3px 10px rgba(99,102,241,0.3);
 }
 
-button:hover {
-  background: #35353a;
-  border-color: #7b6cff;
-  transform: scale(1.035);
+.btn:hover {
+  background: linear-gradient(to right, #4f46e5, #4338ca);
+  transform: translateY(-2px);
 }
 
-button:active {
-  transform: scale(0.97);
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-green {
+  background: linear-gradient(to right, #22c55e, #16a34a);
+}
+
+.btn-green:hover {
+  background: linear-gradient(to right, #16a34a, #15803d);
+}
+
+.btn-red {
+  background: linear-gradient(to right, #ef4444, #dc2626);
+}
+
+.btn-red:hover {
+  background: linear-gradient(to right, #dc2626, #b91c1c);
 }
 
 /* ============================
-   Tema Claro
+   CARDS DE TAREFA
 ============================ */
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #ffffff;
-    color: #1f1f1f;
-  }
+.task-card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #e1e4e8;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.06);
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
-  #root {
-    background: rgba(0,0,0,0.04);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
-  }
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.12);
+}
 
-  button {
-    background: #f3f3f7;
-    color: #222;
-  }
+.task-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1f2937;
+}
 
-  button:hover {
-    background: #ececf0;
-    border-color: #7b6cff;
+.task-desc {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* Container dos botões dentro do card */
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ============================
+   ANIMAÇÕES
+============================ */
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Animação de entrada */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+.task-completed {
+  text-decoration: line-through;
+  opacity: 0.6;
 }
